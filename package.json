@@ -32,7 +32,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "format": "standard --fix \"src/**/*.js\"",
+    "format": "standard 'src/**/*.js' --fix",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
@@ -78,9 +78,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/reubenberghan/google-sheets-poc"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/reubenberghan/google-sheets-poc/issues"
   }
 }

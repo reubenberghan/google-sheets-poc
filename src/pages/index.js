@@ -11,7 +11,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <h1>Questions</h1>
+      <h1>Questions by topic</h1>
       <ol>
         {map(({ node: { body, id, topic } = {} }) => <li key={id}>{topic}: {body}</li>, edges)}
       </ol>
