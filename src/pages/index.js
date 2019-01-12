@@ -1,9 +1,15 @@
 import * as React from 'react'
 
+import { filter, map, not, pipe } from 'ramda'
+
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
-import { map } from 'ramda'
+
+const mapQuestions = pipe(
+  filter(({ node: { archived } = {} }) => not(archived)),
+  map(({ node: { body, id, topic } = {} }) => <li key={id}>{topic}: {body}</li>)
+)
 
 export default ({ data }) => {
   const { allGoogleSheetQuestionsRow: { edges } = {} } = data
@@ -13,7 +19,7 @@ export default ({ data }) => {
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <h1>Questions by topic</h1>
       <ol>
-        {map(({ node: { body, id, topic } = {} }) => <li key={id}>{topic}: {body}</li>, edges)}
+        {mapQuestions(edges)}
       </ol>
     </Layout>
   )
@@ -27,6 +33,7 @@ export const query = graphql`
           id
           body
           topic
+          archived
         }
       }
     }
