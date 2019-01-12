@@ -1,3 +1,18 @@
+require('dotenv').config()
+
+const makeCredentials = ({ CLIENT_EMAIL = '', PROJECT_ID = '', PRIVATE_KEY = '', PRIVATE_KEY_ID = '' }) => ({
+  type: 'service_account',
+  project_id: PROJECT_ID,
+  private_key_id: PRIVATE_KEY_ID,
+  private_key: PRIVATE_KEY.replace(/(\\r)|(\\n)/g, '\n'),
+  client_email: CLIENT_EMAIL,
+  client_id: '',
+  auth_uri: 'https://accounts.google.com/o/oauth2/auth',
+  token_uri: 'https://oauth2.googleapis.com/token',
+  auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs',
+  client_x509_cert_url: `https://www.googleapis.com/robot/v1/metadata/x509/${encodeURI(CLIENT_EMAIL)}`
+})
+
 module.exports = {
   siteMetadata: {
     title: `Google Sheets POC`,
@@ -32,7 +47,7 @@ module.exports = {
       options: {
         spreadsheetId: '14yrj2sQXSBTeY_G_p-kieHHXMH3qy212HACNPdTC4dI',
         worksheetTitle: 'questions',
-        credentials: require('./.env/google-sheets-poc-6d42e1967586.json')
+        credentials: makeCredentials(process.env)
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
