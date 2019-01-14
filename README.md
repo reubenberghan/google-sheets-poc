@@ -4,4 +4,4 @@ This project is intended to explore the viablility of using Gatbsy to serve a st
 
 The project uses Netlify for hosting and continuous delivery.
 
-[Production site](https://hungry-raman-79bda9.netlify.com/)
+See a demo of the deployed [Production site](https://hungry-raman-79bda9.netlify.com/).
