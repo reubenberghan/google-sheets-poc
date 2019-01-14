@@ -1,10 +1,10 @@
 import * as React from 'react'
 
+import { graphql } from 'gatsby'
 import { filter, map, not, pipe } from 'ramda'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { graphql } from 'gatsby'
 
 const mapQuestions = pipe(
   filter(({ node: { archived } = {} }) => not(archived)),
@@ -16,7 +16,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title='Home' keywords={[`gatsby`, `application`, `react`]} />
       <h1>Questions by topic</h1>
       <ol>
         {mapQuestions(edges)}
