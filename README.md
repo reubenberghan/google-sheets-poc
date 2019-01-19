@@ -20,7 +20,7 @@ If you don't already add `gatsby-cli` globally by running.
 yarn global add gatsby-cli
 ```
 
-Run the following to clone this repo in your local workspace directory.
+Run the following to set this repo up in your local workspace directory.
 
 ```bash
 gatsby new google-sheets-poc https://github.com/reubenberghan/google-sheets-poc
