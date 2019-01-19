@@ -41,7 +41,7 @@ In the [Google API Console](https://console.developers.google.com/) follow these
 
 1. Create a new project.
 2. In the APIs & Services Dashboard page select the Enable API and Services button at the top.
-3. In the PAI library search for the "Google Drive API" click on it and then select the Enable button.
+3. In the API library search for the "Google Drive API" click on it and then select the Enable button.
 4. In the APIs & Services Credentials page click the Create Credentials dropdown and select the Service account key option.
 5. Give your new service account a name e.g. `google-sheets-poc-client` and select the Role of Project > Editor.
 6. Upon creation this will generate a JSON file containing necessary credentials for your new service account to access the Google Sheet.
